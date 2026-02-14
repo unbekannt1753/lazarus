@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lazarus Ecosystem | Manual del Operador</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Orbitron:wght@700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #0a0a0c;
+            --card-bg: rgba(255, 255, 255, 0.03);
+            --accent: #8b5cf6;
+            --accent-glow: rgba(139, 92, 246, 0.3);
+            --text: #e2e8f0;
+            --text-muted: #94a3b8;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--bg);
+            color: var(--text);
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        /* Background Effects */
+        .grid-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: linear-gradient(rgba(139, 92, 246, 0.05) 1px, transparent 1px),
+                              linear-gradient(90deg, rgba(139, 92, 246, 0.05) 1px, transparent 1px);
+            background-size: 50px 50px;
+            z-index: -1;
+        }
+
+        .glow {
+            position: fixed;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, var(--accent-glow) 0%, transparent 70%);
+            border-radius: 50%;
+            filter: blur(80px);
+            z-index: -1;
+            top: -200px;
+            right: -200px;
+        }
+
+        /* Header */
+        header {
+            text-align: center;
+            padding: 4rem 0;
+            animation: fadeInDown 1s ease-out;
+        }
+
+        h1 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 4rem;
+            letter-spacing: 2px;
+            margin-bottom: 1rem;
+            background: linear-gradient(to bottom right, #fff, var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 0 30px var(--accent-glow);
+        }
+
+        .tagline {
+            font-size: 1.25rem;
+            color: var(--text-muted);
+            font-weight: 300;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+        }
+
+        /* Philosophy Section */
+        .philosophy {
+            text-align: center;
+            margin-bottom: 6rem;
+            padding: 3rem;
+            background: var(--card-bg);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 24px;
+        }
+
+        .philosophy h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: #fff;
+        }
+
+        /* Agents Grid */
+        .agents-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-bottom: 6rem;
+        }
+
+        .agent-card {
+            background: var(--card-bg);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 2rem;
+            border-radius: 20px;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+        .agent-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--accent);
+            box-shadow: 0 0 30px var(--accent-glow);
+            background: rgba(139, 92, 246, 0.05);
+        }
+
+        .agent-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.05), transparent);
+            transition: 0.5s;
+        }
+
+        .agent-card:hover::before {
+            left: 100%;
+        }
+
+        .agent-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .agent-card h3 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+            color: var(--accent);
+        }
+
+        .agent-card p {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        /* Workflow Section */
+        .workflow {
+            margin-bottom: 6rem;
+        }
+
+        .section-title {
+            text-align: center;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .timeline {
+            display: flex;
+            justify-content: space-between;
+            position: relative;
+            padding: 2rem 0;
+        }
+
+        .timeline::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, var(--accent), transparent);
+            z-index: -1;
+        }
+
+        .step {
+            background: var(--bg);
+            border: 2px solid var(--accent);
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 0.8rem;
+            box-shadow: 0 0 15px var(--accent-glow);
+        }
+
+        /* Setup Section */
+        .setup {
+            background: linear-gradient(135deg, rgba(139, 92, 246, 0.1), transparent);
+            padding: 4rem;
+            border-radius: 32px;
+            text-align: center;
+            border: 1px solid rgba(139, 92, 246, 0.2);
+        }
+
+        .code-block {
+            background: #000;
+            padding: 1.5rem;
+            border-radius: 12px;
+            font-family: 'monospace';
+            margin: 2rem 0;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid #333;
+        }
+
+        .code-block span {
+            color: #10b981;
+            font-size: 1.1rem;
+        }
+
+        .copy-btn {
+            background: var(--accent);
+            color: white;
+            border: none;
+            padding: 0.8rem 2rem;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .copy-btn:hover {
+            opacity: 0.9;
+            transform: scale(1.05);
+        }
+
+        /* Animations */
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @media (max-width: 768px) {
+            h1 { font-size: 2.5rem; }
+            .timeline { flex-direction: column; gap: 1rem; align-items: center; }
+            .timeline::after { display: none; }
+        }
+    </style>
+</head>
+<body>
+    <div class="grid-bg"></div>
+    <div class="glow"></div>
+
+    <div class="container">
+        <header>
+            <h1>LAZARUS</h1>
+            <p class="tagline">La Intención sobre el Código</p>
+        </header>
+
+        <section class="philosophy">
+            <h2>Ecosistema Autónomo de Agentes</h2>
+            <p>Lazarus no es solo un generador de archivos; es un enjambre de 14 agentes especializados diseñados para llevar una idea desde el concepto hasta el producto final, totalmente localizado al español y optimizado para la máxima eficiencia de tokens.</p>
+        </section>
+
+        <h2 class="section-title">El Enjambre Especializado</h2>
+        <div class="agents-grid">
+            <div class="agent-card">
+                <span class="agent-icon">🏛️</span>
+                <h3>Architect</h3>
+                <p>Define la estrategia técnica, genera el PRD y refina historias de usuario desde una idea cruda.</p>
+            </div>
+            <div class="agent-card">
+                <span class="agent-icon">⚖️</span>
+                <h3>Scrum Master</h3>
+                <p>Audita cada paso del proceso, asegura la calidad y el cumplimiento de las mejores prácticas.</p>
+            </div>
+            <div class="agent-card">
+                <span class="agent-icon">🚀</span>
+                <h3>Orchestrator</h3>
+                <p>Coordina la ejecución paralela y el paso de contexto entre múltiples agentes CLI.</p>
+            </div>
+            <div class="agent-card">
+                <span class="agent-icon">📱</span>
+                <h3>Android Expert</h3>
+                <p>Especialista nativo en Kotlin y Jetpack Compose para experiencias móviles premium.</p>
+            </div>
+            <div class="agent-card">
+                <span class="agent-icon">🖥️</span>
+                <h3>Desktop Expert</h3>
+                <p>Desarrollo multiplataforma usando Tauri y Electron con integraciones nativas profundas.</p>
+            </div>
+            <div class="agent-card">
+                <span class="agent-icon">🧹</span>
+                <h3>Refactor Agent</h3>
+                <p>El "Optimizado". Limpia código, reduce el consumo de tokens y corrige deuda técnica automáticamente.</p>
+            </div>
+            <div class="agent-card">
+                <span class="agent-icon">🧩</span>
+                <h3>Frontend Agent</h3>
+                <p>Especialista en React y Next.js con arquitectura FSD y sistemas de diseño modernos.</p>
+            </div>
+            <div class="agent-card">
+                <span class="agent-icon">🛡️</span>
+                <h3>QA Agent</h3>
+                <p>Aseguramiento de calidad total: seguridad, accesibilidad y pruebas integrales automáticas.</p>
+            </div>
+        </div>
+
+        <section class="workflow">
+            <h2 class="section-title">Flujo Maestro (/build)</h2>
+            <div class="timeline">
+                <div class="step">/iniciar-proyecto</div>
+                <div class="step">/plan</div>
+                <div class="step">/build</div>
+                <div class="step">/auditar</div>
+            </div>
+        </section>
+
+        <section class="setup">
+            <h2 class="section-title">Instalación Global</h2>
+            <p>Inyecta el poder de Lazarus en cualquier proyecto con un solo comando:</p>
+            <div class="code-block">
+                <span>curl -sSL https://raw.githubusercontent.com/unbekannt1753/lazarus/main/scripts/setup.sh | bash -s -- .</span>
+            </div>
+            <button class="copy-btn">COPIAR COMANDO</button>
+        </section>
+
+        <footer style="text-align: center; padding: 4rem 0; color: var(--text-muted); font-size: 0.8rem;">
+            &copy; 2026 Lazarus Ecosystem | Optimized for Advanced Agentic Coding
+        </footer>
+    </div>
+
+    <script>
+        document.querySelector('.copy-btn').addEventListener('click', () => {
+            const code = document.querySelector('.code-block span').innerText;
+            navigator.clipboard.writeText(code);
+            alert('¡Comando copiado al portapapeles!');
+        });
+    </script>
+</body>
+</html>

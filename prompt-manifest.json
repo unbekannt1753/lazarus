@@ -21,13 +21,13 @@
     },
     {
       "path": "scripts/setup.ps1",
-      "sha256": "315e188fa0490b61faee636d6c24a7c8b031a942e6bf6c4d34a3c288a043f9ee",
-      "size": 1129
+      "sha256": "adbc2a9778aee76057a720e0e9a748f6e4db6a3f12e250c257d869dac4b77416",
+      "size": 1836
     },
     {
       "path": "scripts/setup.sh",
-      "sha256": "f2a6800727023515fc4575499daca977f8626fe42c5d31b259ce129647460740",
-      "size": 775
+      "sha256": "cc456c1bf5cbca272a74ea901f6285aa623add4dc9b315d8818100957d18c9d7",
+      "size": 1450
     },
     {
       "path": "prompt-manifest.json",
