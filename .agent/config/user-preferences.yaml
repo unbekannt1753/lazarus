@@ -4,12 +4,12 @@
 # This file is optional. Works with defaults if not present.
 # CLI priority: --vendor arg > agent_cli_mapping > default_cli > cli-config.yaml's active_vendor > gemini
 
-# Response language setting (ko, en, ja, zh, ...)
-language: ko
+# Response language setting (ko, en, ja, zh, es, ...)
+language: es
 
 # Date/time format
 date_format: ISO
-timezone: Asia/Seoul
+timezone: America/Mexico_City
 
 # Default CLI (for single tasks)
 default_cli: gemini
