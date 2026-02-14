@@ -25,7 +25,12 @@
       "size": 1836
     },
     {
-      "path": "scripts/setup.sh",
+      "path": "OPERATOR_MANUAL.html",
+      "sha256": "6e61a2c8f44e6f3582dca58cd3e8f23cead7a28d3dee849866e41f22c2a5d330",
+      "size": 11379
+    },
+    {
+      "path": "OPERATOR_MANUAL.md",
       "sha256": "cc456c1bf5cbca272a74ea901f6285aa623add4dc9b315d8818100957d18c9d7",
       "size": 1450
     },
@@ -591,7 +596,7 @@
   "metadata": {
     "skillCount": 14,
     "workflowCount": 11,
-    "totalFiles": 123
+    "totalFiles": 124
   }
 }
 ```
