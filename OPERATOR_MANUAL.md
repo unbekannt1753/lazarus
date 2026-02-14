@@ -31,9 +31,26 @@ Alterna tu experiencia a través del comando `/build`:
 - **Hands-Off (Sin intervención)**: Enfócate en el resultado. Ideal para prototipado rápido.
 - **Developer-in-the-Loop (Desarrollador presente)**: Aprende de los agentes. Mira los logs del terminal y los diffs de código.
 
-## 5. Extendiendo Lazarus
-Para añadir un nuevo agente:
-1. Crea una carpeta en `.agent/skills/`.
-2. Añade `SKILL.md` y una carpeta `resources/`.
-3. Actualiza `prompt-manifest.json` y `skill-routing.md`.
-4. Ejecuta `/auditar` para verificar la integración.
+## 5. Instalación y Distribución
+
+Existen tres formas de llevar Lazarus a un nuevo proyecto:
+
+### A. El "One-Liner" (Recomendado)
+Puedes instalar el ecosistema Lazarus directamente desde GitHub con un solo comando:
+```bash
+curl -sSL https://raw.githubusercontent.com/unbekannt1753/lazarus/main/scripts/setup.sh | bash -s -- .
+```
+
+### B. Usando el Script Local
+Si ya tienes el repositorio clonado:
+```bash
+./scripts/setup.sh /ruta/al/proyecto
+```
+
+### C. Diferencia con `bunx oh-my-ag`
+- **`bunx oh-my-ag`**: Instala los agentes "vainilla" (6 agentes básicos en inglés).
+- **Lazarus**: Instala el enjambre fortificado (14 agentes, localizado al español, con /build maestro).
+> [!IMPORTANT]
+> Aún recomendamos tener **Bun** y **uv** instalados, ya que son el "motor" que permite al Orchestrator ejecutar tareas en paralelo y gestionar dashboards.
+
+## 6. Extendiendo Lazarus
