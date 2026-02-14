@@ -34,6 +34,7 @@ echo "📦 Copiando habilidades y workflows..."
 cp -r "$SOURCE_DIR/.agent/"* "$TARGET_DIR/.agent/"
 cp "$SOURCE_DIR/prompt-manifest.json" "$TARGET_DIR/"
 cp "$SOURCE_DIR/OPERATOR_MANUAL.md" "$TARGET_DIR/"
+cp "$SOURCE_DIR/OPERATOR_MANUAL.html" "$TARGET_DIR/"
 
 # 4. Inicializar Git si es necesario
 if [ ! -d "$TARGET_DIR/.git" ]; then
@@ -48,4 +49,15 @@ if [ "$TRAP_CLEANUP" = true ]; then
 fi
 
 echo "✅ ¡Lazarus ha sido instalado con éxito!"
+echo "📄 Abriendo manual visual..."
+
+# Intentar abrir el manual automáticamente según el SO
+if command -v xdg-open &> /dev/null; then
+    xdg-open "$TARGET_DIR/OPERATOR_MANUAL.html"
+elif command -v open &> /dev/null; then
+    open "$TARGET_DIR/OPERATOR_MANUAL.html"
+elif command -v start &> /dev/null; then
+    start "$TARGET_DIR/OPERATOR_MANUAL.html"
+fi
+
 echo "👉 Ahora abre esta carpeta en tu editor y ejecuta '/setup' para comenzar."

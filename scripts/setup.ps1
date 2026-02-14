@@ -34,6 +34,7 @@ Write-Host "📦 Copiando habilidades y workflows..."
 Copy-Item -Path (Join-Path $SourceDir ".agent\*") -Destination (Join-Path $TargetDir ".agent") -Recurse -Force
 Copy-Item -Path (Join-Path $SourceDir "prompt-manifest.json") -Destination $TargetDir -Force
 Copy-Item -Path (Join-Path $SourceDir "OPERATOR_MANUAL.md") -Destination $TargetDir -Force
+Copy-Item -Path (Join-Path $SourceDir "OPERATOR_MANUAL.html") -Destination $TargetDir -Force
 
 # 4. Git Init
 if (!(Test-Path (Join-Path $TargetDir ".git"))) {
@@ -48,4 +49,13 @@ if ($Cleanup) {
 }
 
 Write-Host "✅ ¡Lazarus ha sido instalado con éxito!" -ForegroundColor Green
+Write-Host "📄 Abriendo manual visual..." -ForegroundColor Yellow
+
+# Intentar abrir el manual automáticamente
+try {
+    Start-Process (Join-Path $TargetDir "OPERATOR_MANUAL.html")
+} catch {
+    Write-Host "👉 No se pudo abrir el manual automáticamente. Puedes abrirlo manualmente en: $(Join-Path $TargetDir 'OPERATOR_MANUAL.html')"
+}
+
 Write-Host "👉 Ahora abre esta carpeta en tu editor y ejecuta '/setup' para comenzar."
