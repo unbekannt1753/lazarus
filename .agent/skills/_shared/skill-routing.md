@@ -12,14 +12,30 @@ Routing rules for Orchestrator and workflow-guide to assign tasks to the correct
 | auth, JWT, login, register, password | **backend-agent** | Auth UI task can also be created for frontend |
 | UI, component, page, form, screen (web) | **frontend-agent** | |
 | style, Tailwind, responsive, CSS | **frontend-agent** | |
-| mobile, iOS, Android, Flutter, React Native, app | **mobile-agent** | |
-| offline, push notification, camera, GPS | **mobile-agent** | |
+| mobile, iOS, Android, Flutter, React Native, app | **mobile-agent** | Cross-platform |
+| Kotlin, Jetpack Compose, Android Native, Hilt | **android-agent** | Native only |
+| Windows, macOS, Linux, Tauri, Electron, Desktop | **desktop-agent** | |
+| offline, push notification, camera, GPS | **mobile-agent**/**android-agent** | |
+| refactor, optimize, clean code, DRY | **refactor-agent** | |
 | bug, error, crash, broken, slow | **debug-agent** | |
 | review, security, performance | **qa-agent** | |
 | accessibility, WCAG, a11y | **qa-agent** | |
-| plan, breakdown, task, sprint | **pm-agent** | |
+| scrum, audit, status, blockers, retro | **scrum-agent** | Process check |
+| plan, breakdown, task, sprint | **pm-agent** | Technical plan |
 | automatic, parallel, orchestrate | **orchestrator** | |
 | workflow, guide, manual, step-by-step | **workflow-guide** | |
+
+---
+
+## Command Map
+- `/iniciar-proyecto` -> Architect Agent (Discovery)
+- `/plan` -> PM Agent (Technical Planning)
+- `/coordinate` / `/orchestrate` -> Orchestrator (Execution)
+- `/auditar` -> Scrum Agent (Audit)
+- `/build` / `/lanzar` -> Master Workflow (E2E Integration)
+- `/debug` -> Debug Agent (Analysis & Fix)
+- `/review` -> QA Agent (Compliance)
+- `/refactor` -> Refactor Agent (Optimization)
 
 ---
 
@@ -29,7 +45,12 @@ Routing rules for Orchestrator and workflow-guide to assign tasks to the correct
 |----------------|-----------------|
 | "Create a fullstack app" | pm → (backend + frontend) parallel → qa |
 | "Create a mobile app" | pm → (backend + mobile) parallel → qa |
-| "Fullstack + mobile" | pm → (backend + frontend + mobile) parallel → qa |
+| "Native Android project" | pm → (backend + android) parallel → qa |
+| "Desktop application" | pm → (backend + desktop) parallel → qa |
+| "Fullstack + mobile + desktop" | pm → (backend + frontend + mobile + desktop) parallel → qa |
+| "Optimize whole project" | refactor → qa |
+| "Audit project health" | scrum → (relevant agents if gaps found) |
+| "Show status and blockers" | scrum |
 | "Fix bug and review" | debug → qa |
 | "Add feature and test" | pm → relevant agent → qa |
 | "Do everything automatically" | orchestrator (internally pm → agents → qa) |

@@ -15,6 +15,26 @@
       "size": 570
     },
     {
+      "path": ".agent/workflows/setup.md",
+      "sha256": "852096a8d8bb251870e3e96ea9423fce9319a739e5cd28b69dcc6ade16aecb18",
+      "size": 917
+    },
+    {
+      "path": "scripts/setup.ps1",
+      "sha256": "315e188fa0490b61faee636d6c24a7c8b031a942e6bf6c4d34a3c288a043f9ee",
+      "size": 1129
+    },
+    {
+      "path": "scripts/setup.sh",
+      "sha256": "f2a6800727023515fc4575499daca977f8626fe42c5d31b259ce129647460740",
+      "size": 775
+    },
+    {
+      "path": "prompt-manifest.json",
+      "sha256": "84e2ab4da765272962f70c7c6ce8efc379c18b5ae2963c804b65c484c350343b",
+      "size": 1405
+    },
+    {
       "path": ".agent/mcp.json",
       "sha256": "84e2ab4da765272962f70c7c6ce8efc379c18b5ae2963c804b65c484c350343b",
       "size": 1405
@@ -76,8 +96,133 @@
     },
     {
       "path": ".agent/skills/_shared/skill-routing.md",
-      "sha256": "2274edddacf3b08b923f61b65e0679f57d437759f16e0b56749fa4344001cd9c",
-      "size": 3053
+      "sha256": "4b8cec0fcfa337db014c33c513e1b74d6af9136fc2104857461d2c4edfd40ed7",
+      "size": 4121
+    },
+    {
+      "path": ".agent/skills/architect-agent/SKILL.md",
+      "sha256": "4539fc4418f89ff2051509832dffb62bf2c040a97b95ba71edf679558e62789d",
+      "size": 2180
+    },
+    {
+      "path": ".agent/skills/architect-agent/resources/checklist.md",
+      "sha256": "61025831cd9d87b52dab97058f39d92671706144cab7da7135889b0e384ab297",
+      "size": 495
+    },
+    {
+      "path": ".agent/skills/architect-agent/resources/error-playbook.md",
+      "sha256": "8b967d89f52b44a890eba22fe12cf25bdd055256f814f9f93eb3d24fe8a439b8",
+      "size": 1017
+    },
+    {
+      "path": ".agent/skills/architect-agent/resources/examples.md",
+      "sha256": "80c62f972f3edea00daf96e92d1de0df27e93a416f9f5df02cefed87666e125d",
+      "size": 1118
+    },
+    {
+      "path": ".agent/skills/architect-agent/resources/execution-protocol.md",
+      "sha256": "f9b83549aa7062276fbd29401ad9e7b84ab93ec31d66502cba8f862f95441920",
+      "size": 1115
+    },
+    {
+      "path": ".agent/skills/architect-agent/resources/prd-template.md",
+      "sha256": "69b7b55ce01f301a07a47c97b25e6e80430ddf706e172a64022f42cebde7a4b2",
+      "size": 1041
+    },
+    {
+      "path": ".agent/skills/architect-agent/resources/user-story-template.md",
+      "sha256": "b0fa3dc49181cbf7ba778e4b6033c60b21e0658539e13ac93af1b0ba8f6bfb74",
+      "size": 323
+    },
+    {
+      "path": ".agent/skills/android-agent/SKILL.md",
+      "sha256": "e7643e0c47ee3d4011d1ae14101a27149d4318c34c4603c276b94883be437eca",
+      "size": 756
+    },
+    {
+      "path": ".agent/skills/android-agent/resources/checklist.md",
+      "sha256": "8905260178be059f776269601f0101968565706599cc0ad007775a46be649666",
+      "size": 847
+    },
+    {
+      "path": ".agent/skills/android-agent/resources/error-playbook.md",
+      "sha256": "82ff1d1988880e6e76722bc306db48fcfb39469427b928894dda650ef894e003",
+      "size": 655
+    },
+    {
+      "path": ".agent/skills/android-agent/resources/examples.md",
+      "sha256": "f2d7228143c19b0fc640accc5a2efd067867f84e3c548959eb41a8e2b0208717",
+      "size": 678
+    },
+    {
+      "path": ".agent/skills/desktop-agent/SKILL.md",
+      "sha256": "a685a8aa59352134b0678a10c327feac4c1bfc1ae27d49b7f0af815c5c7491a9",
+      "size": 841
+    },
+    {
+      "path": ".agent/skills/desktop-agent/resources/checklist.md",
+      "sha256": "3c5e97429e59124f13edc807e86221fa03f91e49e7c0eb97d76fcf727f61eb81",
+      "size": 836
+    },
+    {
+      "path": ".agent/skills/desktop-agent/resources/error-playbook.md",
+      "sha256": "0cb20455aac753c014b650fb74a193782267a4090526d375d256a44cb2eb709c",
+      "size": 686
+    },
+    {
+      "path": ".agent/skills/desktop-agent/resources/examples.md",
+      "sha256": "e2a3d51273985dbbbc39869306db48fcfb39469427b928894dda650ef894e003",
+      "size": 696
+    },
+    {
+      "path": ".agent/skills/refactor-agent/SKILL.md",
+      "sha256": "ddfefadad28f9f4691615560de654742a4c81a9544ce55b1db61e790b1e8e3ba",
+      "size": 912
+    },
+    {
+      "path": ".agent/skills/refactor-agent/resources/checklist.md",
+      "sha256": "909233aeafdd24c024962a7d69aeecc44ff041f4f6f5ca79ce7a9c61776ff899",
+      "size": 858
+    },
+    {
+      "path": ".agent/skills/refactor-agent/resources/error-playbook.md",
+      "sha256": "4e616f96d936662b2a25c8c7e8b72408e81695a36b73d1940e2320ad69d778b2",
+      "size": 815
+    },
+    {
+      "path": ".agent/skills/refactor-agent/resources/examples.md",
+      "sha256": "92af512cd2c7ab994b553d3f13d03f70452e1817f436df00105c5984b7bb5a4c",
+      "size": 772
+    },
+    {
+      "path": ".agent/skills/refactor-agent/resources/token-efficiency.md",
+      "sha256": "e778938b90c38f6ed106c67d64df0351879b00804d7121da4a0220e9cbb3df78",
+      "size": 1079
+    },
+    {
+      "path": ".agent/skills/scrum-agent/SKILL.md",
+      "sha256": "c03e2f647bc1e2f075960cbe4d2b6cd781b6e5d54da2e3462b658780cb299415",
+      "size": 1483
+    },
+    {
+      "path": ".agent/skills/scrum-agent/resources/audit-report-template.md",
+      "sha256": "1ff17c156612dcd444ba79cc0df3538be8bb79fe989eaeb9e0c5354955f916f1",
+      "size": 585
+    },
+    {
+      "path": ".agent/skills/scrum-agent/resources/checklist.md",
+      "sha256": "b13c6da91f6ba121c6fcf2e628cd42cc3539a12092b065c933f5086085ca5ec3",
+      "size": 797
+    },
+    {
+      "path": ".agent/skills/scrum-agent/resources/error-playbook.md",
+      "sha256": "01c68a4e26efcd6539f5ef2ae0b4b9ddc10ee2cf11f004a2eb4096bc2c06e418",
+      "size": 827
+    },
+    {
+      "path": ".agent/skills/scrum-agent/resources/examples.md",
+      "sha256": "0fef821bc7da26d849261fbcc590c97ef8086ee746140a87393c19c326903304",
+      "size": 733
     },
     {
       "path": ".agent/skills/backend-agent/SKILL.md",
@@ -390,6 +535,16 @@
       "size": 2171
     },
     {
+      "path": ".agent/workflows/auditar.md",
+      "sha256": "cbf3526ea5bbb5e4036d920e9e7e88e180b6f96318e9ca067837a34e525db3d7",
+      "size": 1827
+    },
+    {
+      "path": ".agent/workflows/build.md",
+      "sha256": "ac8571ad514b11ccd7ca44dc86bbbc246b43cbd2ed985c7bdd77cebefd2355ad",
+      "size": 1962
+    },
+    {
       "path": ".agent/workflows/coordinate.md",
       "sha256": "b357b5de26f3ad16d57fc80b14871b1fdcec7c7d464860741efb13b0a3c8a3cf",
       "size": 3886
@@ -420,6 +575,11 @@
       "size": 6827
     },
     {
+      "path": ".agent/workflows/iniciar-proyecto.md",
+      "sha256": "8f99e0412595c50078372e4bb4951fb81af8be3d6526318dcba0cc146ff3668a",
+      "size": 1693
+    },
+    {
       "path": ".agent/workflows/tools.md",
       "sha256": "4ee5af163ecd11aa3b18711ae1203ffb9221ec90f0d95ead17d4bbfa0c45f70e",
       "size": 4914
@@ -429,8 +589,9 @@
     "algorithm": "sha256"
   },
   "metadata": {
-    "skillCount": 9,
-    "workflowCount": 7,
-    "totalFiles": 84
+    "skillCount": 14,
+    "workflowCount": 11,
+    "totalFiles": 123
   }
 }
+```
